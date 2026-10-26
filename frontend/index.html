@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111827">
+    <title>Workshop Management System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <a href="#dashboard" class="brand">
+                <div class="brand-icon">W</div>
+                <div>
+                    <h2>Workshop</h2>
+                    <p>Management System</p>
+                </div>
+            </a>
+
+            <p class="menu-label">MENU UTAMA</p>
+
+            <nav class="sidebar-nav">
+                <a class="nav-link active" href="#dashboard">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-link" href="#inventory">
+                    <span class="nav-icon">▦</span>
+                    <span>Inventaris</span>
+                </a>
+                <a class="nav-link" href="#purchases">
+                    <span class="nav-icon">↓</span>
+                    <span>Pembelian</span>
+                </a>
+                <a class="nav-link" href="#sales">
+                    <span class="nav-icon">↗</span>
+                    <span>Penjualan</span>
+                </a>
+                <a class="nav-link" href="#services">
+                    <span class="nav-icon">🔧</span>
+                    <span>Servis Bengkel</span>
+                </a>
+                <a class="nav-link" href="#customers">
+                    <span class="nav-icon">♙</span>
+                    <span>Pelanggan</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <span class="status-dot"></span>
+                Sistem Bengkel
+                <p>Versi 1.0 · MVP</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar-title">
+                    <p class="eyebrow">WORKSHOP MANAGEMENT SYSTEM</p>
+                    <h1 id="page-title">Dashboard</h1>
+                </div>
+
+                <div class="user-info">
+                    <div class="avatar">A</div>
+                    <div>
+                        <strong id="user-name">Administrator</strong>
+                        <p id="user-role">Admin</p>
+                    </div>
+                </div>
+            </header>
+
+            <section id="dashboard" class="page">
+                <div class="welcome">
+                    <div>
+                        <h2>Selamat datang!</h2>
+                        <p>Berikut ringkasan operasional bengkel Anda.</p>
+                    </div>
+                    <span id="current-date" class="date-label"></span>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-card">
+                        <div class="stat-heading">
+                            <span>Total Spare Part</span>
+                            <span class="stat-icon blue">SP</span>
+                        </div>
+                        <h3>—</h3>
+                        <p>Data dari inventaris</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-heading">
+                            <span>Stok Menipis</span>
+                            <span class="stat-icon orange">!</span>
+                        </div>
+                        <h3>—</h3>
+                        <p>Perlu pemeriksaan stok</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-heading">
+                            <span>Servis Berjalan</span>
+                            <span class="stat-icon green">SB</span>
+                        </div>
+                        <h3>—</h3>
+                        <p>Servis aktif di bengkel</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-heading">
+                            <span>Transaksi Hari Ini</span>
+                            <span class="stat-icon purple">TR</span>
+                        </div>
+                        <h3>—</h3>
+                        <p>Penjualan dan pembayaran</p>
+                    </article>
+                </div>
+
+                <section class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Akses Cepat</h2>
+                            <p>Pilih modul yang ingin dibuka.</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <a href="#inventory" class="action-card">
+                            <span class="action-icon blue">01</span>
+                            <strong>Inventaris</strong>
+                            <span>Kelola spare part</span>
+                        </a>
+
+                        <a href="#purchases" class="action-card">
+                            <span class="action-icon orange">02</span>
+                            <strong>Pembelian</strong>
+                            <span>Catat barang masuk</span>
+                        </a>
+
+                        <a href="#sales" class="action-card">
+                            <span class="action-icon purple">03</span>
+                            <strong>Penjualan</strong>
+                            <span>Transaksi spare part</span>
+                        </a>
+
+                        <a href="#services" class="action-card">
+                            <span class="action-icon green">04</span>
+                            <strong>Servis Bengkel</strong>
+                            <span>Kelola pekerjaan servis</span>
+                        </a>
+                    </div>
+                </section>
+
+                <div class="notice">
+                    <strong>Informasi:</strong>
+                    Ringkasan masih menunggu integrasi API backend.
+                    Angka operasional belum mengambil data PostgreSQL.
+                </div>
+            </section>
+
+            <section id="module-page" class="page hidden">
+                <div class="module-header">
+                    <a href="#dashboard" class="back-link">← Kembali ke Dashboard</a>
+                </div>
+
+                <section class="panel module-panel">
+                    <div class="module-symbol" id="module-symbol">▦</div>
+                    <h2 id="module-heading">Modul</h2>
+                    <p id="module-description"></p>
+                    <div class="module-note">
+                        <strong>Persiapan integrasi</strong>
+                        <p>
+                            Tampilan modul ini masih berupa halaman awal.
+                            Data dan transaksi akan dihubungkan ke API backend
+                            pada tahap berikutnya.
+                        </p>
+                    </div>
+                </section>
+            </section>
+
+            <footer class="footer">
+                <span>Workshop Management System</span>
+                <span>Versi 1.0 · MVP</span>
+            </footer>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

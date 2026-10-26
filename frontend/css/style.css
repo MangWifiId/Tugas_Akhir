@@ -1,0 +1,511 @@
+:root {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1e293b;
+    background: #f5f7fb;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --primary: #2563eb;
+    --sidebar: #111827;
+    --muted: #64748b;
+    --border: #e5eaf2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 18px 20px;
+    background: var(--sidebar);
+    color: #f8fafc;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 8px 32px;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--primary);
+    color: white;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.brand h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.brand p {
+    margin: 4px 0 0;
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+.menu-label {
+    margin: 0 10px 12px;
+    color: #9ca3af;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.sidebar-nav {
+    display: grid;
+    gap: 6px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    padding: 11px 14px;
+    border-radius: 9px;
+    color: #cbd5e1;
+    font-size: 14px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #26364f;
+    color: white;
+}
+
+.nav-link.active {
+    box-shadow: inset 3px 0 var(--primary);
+}
+
+.nav-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    flex-shrink: 0;
+    font-size: 19px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 20px 10px 0;
+    color: #cbd5e1;
+    font-size: 12px;
+}
+
+.sidebar-footer p {
+    margin: 8px 0 0;
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+}
+
+/* HEADER */
+.main-content {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 36px;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+    margin: 0 0 6px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 25px;
+    letter-spacing: -0.6px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-weight: 700;
+}
+
+.user-info strong {
+    font-size: 13px;
+}
+
+.user-info p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* DASHBOARD */
+.page {
+    flex: 1;
+    padding: 30px 36px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    margin: 0 0 7px;
+    font-size: 22px;
+}
+
+.welcome p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.date-label {
+    padding: 10px 13px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: white;
+    color: #475569;
+    font-size: 12px;
+}
+
+/* STATISTIK */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.stat-card {
+    padding: 21px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: white;
+    box-shadow: 0 3px 10px rgb(15 23 42 / 3%);
+}
+
+.stat-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.stat-icon,
+.action-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.stat-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.blue {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.orange {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+.green {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.purple {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.stat-card h3 {
+    margin: 19px 0 8px;
+    font-size: 28px;
+    letter-spacing: -0.7px;
+}
+
+.stat-card>p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* PANEL DAN AKSES CEPAT */
+.panel {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: white;
+    box-shadow: 0 3px 10px rgb(15 23 42 / 3%);
+}
+
+.panel-heading {
+    margin-bottom: 22px;
+}
+
+.panel-heading h2,
+.module-panel h2 {
+    margin: 0 0 7px;
+    font-size: 17px;
+}
+
+.panel-heading p,
+.module-panel>p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.action-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.action-card:hover {
+    transform: translateY(-2px);
+    border-color: #93b4ff;
+}
+
+.action-icon {
+    width: 39px;
+    height: 39px;
+}
+
+.action-card strong {
+    font-size: 13px;
+}
+
+.action-card>span:last-child {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.notice {
+    margin-top: 20px;
+    padding: 15px 17px;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    background: #eff6ff;
+    color: #1e40af;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* HALAMAN MODUL */
+.module-header {
+    margin-bottom: 18px;
+}
+
+.back-link {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.module-panel {
+    min-height: 250px;
+    padding-top: 30px;
+}
+
+.module-symbol {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    background: #dbeafe;
+    color: #2563eb;
+    font-size: 22px;
+}
+
+.module-panel h2 {
+    margin-bottom: 10px;
+}
+
+.module-note {
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: 9px;
+    background: #f8fafc;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.module-note p {
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
+/* FOOTER */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 36px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+
+    .stats-grid,
+    .quick-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .page {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .brand {
+        padding-bottom: 20px;
+    }
+
+    .sidebar-nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sidebar-footer {
+        margin-top: 20px;
+    }
+
+    .topbar {
+        padding: 20px;
+    }
+
+    .topbar h1 {
+        font-size: 21px;
+    }
+
+    .user-info strong {
+        font-size: 11px;
+    }
+
+    .page {
+        padding: 22px 16px;
+    }
+
+    .welcome {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .stats-grid,
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .footer {
+        padding: 16px;
+    }
+}
